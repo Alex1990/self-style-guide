@@ -2,82 +2,20 @@
 
 个人 JavaScript 代码风格简要规范，大体上同 [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) 一致，更多细节可参考它。
 
-这份指南包括 ES6 的内容，ES5 的可参考 [javascript-ES5](https://github.com/Alex1990/self-style-guide/blob/master/javascript-ES5.md)。
-
 ## 命名
 
 - 小驼峰，即首字母小写，后面每个单词首字母大写，如`userName`；
 - 不要使用过于简短的名字，比如只用一个字母，除非用于循环中的计数器，如`i`；
 - 构造函数的函数名称首字母大写；
-- jQuery 对象命名加前缀`$`；
 - 以上命名，通常不要使用汉语拼音，不要出现单词拼写错误；
 
 ## 变量声明
 
-- 一行使用一个`var`/`const`/`let`
-- 不重新赋值的引用变量使用`const`，重新赋值的使用`let`
-
-## 对象
-
-使用对象属性或方法简写形式：
-
-```js
-const name = 'Foo';
-
-const foo = {
-  name,
-
-  getName() {
-    return this.name;
-  }
-};
-```
-
-## 数组
-
-使用 array spreads `...` 复制数组：
-
-```js
-const itemsCopy = [...items];
-```
-
-使用 `Array.from` 将类数组对象（array-like object）转换成数组：
-
-```js
-const args = Array.from(arguments);
-```
-
-## 函数
-
-使用箭头函数（Arrow Functions）替代函数表达式：
-
-```js
-const items = [1, 2, 3];
-items.map(v => v * 2);
-```
-
-使用 rest arguments 代替`arguments`变量：
-
-```js
-function max(..args) {
-  return Math.max.apply(args);
-}
-```
-
-使用 default parameter，而不是修改函数参数：
-
-```js
-function handle(opts = {}) {
-}
-```
+- 一行使用一个`var`
 
 ## 条件表达式
 
 - 使用全等运算符`===`或不全等运算符`!==`，但与`null`比较时可用`==`/`!=`；
-
-## 注释
-
-多行注释使用`/** ... */`，单行注释使用`//`。
 
 ## 引号
 
@@ -90,29 +28,6 @@ function handle(opts = {}) {
 ## 分号
 
 - 语句结尾必须加分号；
-- 不该加分号的地方不能加，如函数声明结尾；
-
-## 逗号
-
-禁止逗号开头风格，如下：
-
-```js
-const members = [
-  foo
-  , bar
-  , baz
-];
-```
-
-- 对象或数组最后一个元素后添加逗号（Babel 工具可去除，IE9+ 浏览器不去除也可以）：
-
-```js
-const members = [
-  foo,
-  bar,
-  baz,
-];
-```
 
 ## 空格
 
@@ -143,9 +58,7 @@ const members = [
 
 ## 其他参考风格
 
-更细致的指南可以参考下面，尤其 Airbnb 的，里面也列出了一些最佳实践。
-
-- Airbnb: [English](https://github.com/airbnb/javascript) [中文](https://github.com/yuche/javascript)
+- Airbnb: [English](https://github.com/airbnb/javascript) [中文](https://github.com/adamlu/javascript-style-guide)
 - [jQuery JavaScript Style Guide](http://contribute.jquery.org/style-guide/js/)
 - idiomantic.js: [English](https://github.com/rwaldron/idiomatic.js) [中文](https://github.com/rwaldron/idiomatic.js/tree/master/translations/zh_CN)
 
